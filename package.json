@@ -1,0 +1,23 @@
+{
+  "name": "@ieb/signalk-enviro",
+  "version": "1.0.0",
+  "description": "Plugin that reads Environmental data from a BME280 sensor on i2c",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "signalk-node-server-plugin"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "baconjs": "^0.7.88"
+  },
+  "optionalDependencies": {
+    "node-bme280": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ieb/signalk-enviro"
+  }
+}
