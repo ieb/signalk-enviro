@@ -14,7 +14,7 @@
     "baconjs": "^0.7.88"
   },
   "optionalDependencies": {
-    "node-bme280": "*"
+    "node-bme280": "github:ieb/node-BME280"
   },
   "repository": {
     "type": "git",
