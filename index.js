@@ -22,7 +22,7 @@ const fs = require('fs');
 
 module.exports = function(app) {
   var BME280, barometer;
-  if ( fs.existsSync('sys/class/i2c-adapter') ) { 
+  if ( fs.existsSync('/sys/class/i2c-adapter') ) { 
     // 1 wire is enabled a
     BME280 = require('node-bme280');
 
