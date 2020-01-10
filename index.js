@@ -24,7 +24,7 @@ module.exports = function(app) {
   var BME280, barometer;
   if ( fs.existsSync('/sys/class/i2c-adapter') ) { 
     // 1 wire is enabled a
-    BME280 = require('node-bme280');
+    BME280 = require('./BME280');
 
     console.log("signalk-enviro: BME280 avaiable. ");
   } else {
