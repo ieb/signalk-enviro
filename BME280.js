@@ -152,7 +152,6 @@ BME280.prototype.readPressureAndTemparature = function(callback) {
         var rawPressure = uint20(buffer[0], buffer[1], buffer[2]);
         var rawTemp = uint20(buffer[3], buffer[4], buffer[5]);
         var rawHum  = uint16(buffer[6], buffer[7]);
-        console.log(rawPressure, rawTemp, rawHum);
         
         var t_fine = BME280.compensateTemperature(rawTemp, calibration);
         var pressure = BME280.compensatePressure(rawPressure, t_fine, calibration);
