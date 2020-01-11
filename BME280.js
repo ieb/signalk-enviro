@@ -30,7 +30,7 @@ BME280.prototype.begin = function(callback) {
 
                 if ( err ) 
                     callback(err);
-                else if (value != BME280.CHIP_ID && value != BMP280.CHIP_ID ) 
+                else if (value != BME280.CHIP_ID_BMP && value != BME280.CHIP_ID_BME ) 
                     callback(new Error("Chip ID failed, returned " + value));
                 else {
                     that.readCoefficients(function(err, cal) {
@@ -39,7 +39,7 @@ BME280.prototype.begin = function(callback) {
                         that.wire.writeByte(that.address, BME280.REGISTER_CTRL_HUM, 0x01, function(err) {
                             // overscan temp 1, overscan pressure 4
                             that.wire.writeByte(that.address, BME280.REGISTER_CONTROL, 0x3F, function(err) {
-                                callback(err, value === BME280.CHIP_ID?"BME280 with Humidity":"BMP280 no Humidity");
+                                callback(err, value === BME280.CHIP_ID_BME?"BME280 with Humidity":"BMP280 no Humidity");
                             });
                         });
                     });
@@ -51,8 +51,8 @@ BME280.prototype.begin = function(callback) {
 
 BME280.I2C_ADDRESS_B               = 0x76;
 BME280.I2C_ADDRESS_A               = 0x77;
-BMP280.CHIP_ID                     = 0x58;
-BME280.CHIP_ID                     = 0x60;
+BME280.CHIP_ID_BMP                 = 0x58;
+BME280.CHIP_ID_BME                 = 0x60;
 
 BME280.REGISTER_DIG_T1             = 0x88;
 BME280.REGISTER_DIG_T2             = 0x8A;
