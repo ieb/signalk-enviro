@@ -32,7 +32,7 @@
   }
   BME280.prototype.begin = function(cb) {
     setTimeout(() => {
-      cb(false);
+      cb(false, "Fake sensor");
     }, 150);
   };
   BME280.prototype.readPressureAndTemparature = function(cb) {

@@ -20,10 +20,11 @@ const BME280 = require('./BME280');
 
 var barometer = new BME280({address: 0x76});
 
-barometer.begin((err) =>{
+barometer.begin((err, type) =>{
     if ( err ) {
-        console.log("Failed to init BMP280 ",err);
+        console.log("Failed to init BMx280 sensor ",err);
     } else {
+        console.log("Initialised ",type);
         barometer.readPressureAndTemparature((err, pressure, temperature, humidity) => {
                     if ( err ) {
                         console.log("Error Reading BMP280 ",err);

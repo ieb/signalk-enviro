@@ -47,13 +47,13 @@ module.exports = function(app) {
     // console.log("Enviro Config ", JSON.stringify(config));
     try {
       var barometer = new BME280({address: 0x76});
-      barometer.begin((err) => {
+      barometer.begin((err, type) => {
         if (err) {
             console.info('signalk-enviro: error initializing barometer', err);
             return;
         }
   
-        console.info('barometer running');
+        console.info('barometer running ',type);
 
         // read the BME280
         plugin.enviroInterval = setInterval(() => {
